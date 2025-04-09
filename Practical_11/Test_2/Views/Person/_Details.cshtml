@@ -1,5 +1,11 @@
 ﻿﻿@model Test_2.Models.Person
 
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
 <div>
     <h4>User</h4>
     <hr />
@@ -39,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
 </p>
