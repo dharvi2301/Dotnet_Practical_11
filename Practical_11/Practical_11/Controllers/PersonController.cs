@@ -34,8 +34,12 @@ namespace Practical_11.Controllers
         [HttpPost]
         public ActionResult Create(Person user)
         {
-            users.Add(user);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                users.Add(user);
+                return RedirectToAction("Index");
+            }
+            return View(user);
         }
 
         // GET: User/Edit/{id}
